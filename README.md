@@ -1,2 +1,2 @@
 # JourneyQuest
-A simple database project to track countries visited by users and display them on a world map by highlighting each country. The application also stores user-uploaded images associated with the countries they have visited. Conducted bug tracking and debugging during development phases using console logs and error tracing in Node.js.
+It’s a simple database project using PostgresSQL where we keep track of the countries visited by the users and display the same in the world map by highlighting the country.(still adding some additional features)

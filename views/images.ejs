@@ -1,0 +1,59 @@
+
+
+      <%- include("partials/header.ejs") %>
+        
+      
+
+
+
+
+    <!-- Form div on the right -->
+    <div class="col-md-8" >
+      <div class="container  px-4 py-5" style="display: inline-block;margin-right: 20px;">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" action="/getimages" method="post">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="" fdprocessedid="b6oo0g" name="user">
+                <label for="floatingInput">Username</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Password" fdprocessedid="74v2mu" name="country">
+                <label for="floatingPassword">Visited country</label>
+              </div>
+              <button class="w-100 btn btn-lg btn-primary" type="submit" fdprocessedid="zdxyok">Images</button>
+              <hr class="my-4">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel section -->
+  <div id="Views" class="container" style="margin-bottom: 30px;">
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <% users.forEach(function(user) { %>
+          <% const filePath = user.image; %>
+          <% const fileName = filePath.replace('uploads\\', ''); %>
+          <div class="carousel-item active" style="height:700px;">
+            <img src="<%= fileName %>" class="d-block w-100" alt="...">
+          </div>
+        <% }); %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <%- include("partials/footer.ejs") %>
+</div>
+
+
